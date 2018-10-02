@@ -79,7 +79,7 @@ public class Reader {
 		String menu = "";
 		boolean check = false;
 		while (!check) {
-			menu = scanner.nextLine();
+			menu = scanner.next();
 			check = checkMenu(menu);
 			if (!check) {
 				System.out.println("You entered wrong symbol!");

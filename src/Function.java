@@ -1,3 +1,4 @@
+import java.util.HashSet;
 
 public class Function {
 	private final static double Pi = 3.14;
@@ -80,5 +81,31 @@ public class Function {
 		System.out.printf("Circle %d has min P = %.2f\n", minPindex + 1, circles[minPindex].getP());
 		System.out.printf("Circle %d has max S = %.2f\n", maxSindex + 1, circles[maxSindex].getS());
 		System.out.printf("Circle %d has min S = %.2f\n", minSindex + 1, circles[minSindex].getS());
+	}
+
+	static HashSet<Circle> findCircleWichHasOneLine(Circle[] circles, HashSet<Circle> circlesHashSet) {
+		for (int i = 0; i < circles.length; i++) {
+			for (int j = 1 + i; j < circles.length; j++) {
+				for (int k = 2 + j; k < circles.length; k++) {
+					if (checkPoints(circles[i].getX(), circles[i].getY(), circles[j].getX(), circles[j].getY(),
+							circles[k].getX(), circles[k].getY())) {
+						circlesHashSet.add(circles[i]);
+						circlesHashSet.add(circles[j]);
+						circlesHashSet.add(circles[k]);
+					}
+				}
+			}
+		}
+		return circlesHashSet;
+	}
+
+	private static boolean checkPoints(int x, int y, int x1, int y1, int x2, int y2) {
+		boolean check = false;
+		try {
+			check = (x - x1) / (x2 - x1) == (y - y1) / (y2 - y1);
+		} catch (ArithmeticException e) {
+			System.out.println("The operation is wrong devide by zero!");
+		}
+		return check;
 	}
 }

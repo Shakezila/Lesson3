@@ -32,5 +32,6 @@ public class FlowAction {
 
 	public void additionalFunctions() {
 		Function.findMaxMinSAndP(this.preparator.getCircles());
+		Function.findCircleWichHasOneLine(this.preparator.getCircles(), this.preparator.getCirclesHashSet());
 	}
 }
