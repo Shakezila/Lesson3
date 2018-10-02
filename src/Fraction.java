@@ -38,7 +38,7 @@ public class Fraction {
 	}
 
 	public Reader getReader() {
-		return reader;
+		return this.reader;
 	}
 
 	public int getSmalA() {
@@ -46,22 +46,22 @@ public class Fraction {
 	}
 	
 	public int getA() {
-		return a;
+		return this.A;
 	}
 
 	public int getK() {
-		return k;
+		return this.k;
 	}
 
 	public int getB() {
-		return B;
+		return this.B;
 	}
 
 	public int getP() {
-		return p;
+		return this.p;
 	}
 
 	public int getQ() {
-		return q;
+		return this.q;
 	}
 }
